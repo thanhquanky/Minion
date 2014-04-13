@@ -1,0 +1,90 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img id="logo" src="images/logo.png"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/#/')}"><a href="#">Home</a></li>
+                <li ng-class="{ active: isActive('/#/#about')}"><a href="/#/#about">How it works</a></li>
+                <li ng-class="{ active: isActive('/#/#faq')}"><a href="/#/#faq">FAQ</a></li>
+                <li ng-class="{ active: isActive('/#/#contact')}"><a href="/#/#contact">Contact Us</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <button class="btn btn-default" ng-click="openLoginModal()">Login / Register</button>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div>
+  <div style="height: 98%; margin-top: -5px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto; background-size: cover">
+        <div class="carousel-caption">
+          <h1>{{slide.largeText}}</h1>
+          <p>{{slide.mediumText}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>
+
+
+<script type="text/ng-template" id="loginModal.html">
+    <div class="modal-header">
+        <h3>Login to Minion!</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ng-model="credentials.email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="credentials.password">
+            </div>
+          </div>
+          <div class="form-group" ng-show="loginError.message || registerError.message">
+            <div class="col-sm-10">
+                <span class="text-danger"><strong>{{loginError.message || registerError.message}}</strong></span>
+            </div>
+          </div>
+          <div class="form-group" ng-show="loginSuccess.message || registerSuccess.message">
+            <div class="col-sm-10">
+                <span class="text-success"><strong>{{loginError.message || register.message}}</strong></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" ng-click="login()">Sign in</button>
+          <button type="submit" class="btn btn-info" ng-click="register()">Register</button>
+        </div>
+      </div>
+  </div>
+</script>

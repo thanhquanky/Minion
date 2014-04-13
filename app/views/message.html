@@ -1,0 +1,5 @@
+<div id="messagesDiv" ng-init="init()">
+  <div ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</div>
+      <input type="text" placeholder="Name" ng-model="newMessage.from"/>
+      <input type="text" placeholder="Message" ng-model="newMessage.body" ng-keydown="addMessage($event)"/>
+</div>
