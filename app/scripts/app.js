@@ -14,6 +14,10 @@ angular.module('minionApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/topic', {
+          templateUrl: 'views/topic.html',
+          controller: 'TopicCtrl'
+      })
       .when('/message', {
           templateUrl: 'views/message.html',
           controller: 'MessageCtrl'

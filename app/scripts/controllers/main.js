@@ -56,7 +56,7 @@ angular.module('minionApp')
                 };
                 angular.copy(user, User);
                 $modalInstance.dismiss('cancel');
-                $location.path('/message');
+                $location.path('/topic');
             }, function(error) {
                 $scope.loginError = {
                     code: error.code,
@@ -85,7 +85,7 @@ angular.module('minionApp')
                     };
                     angular.copy(user, User);
                     $modalInstance.dismiss('cancel');
-                    $location.path('/message');
+                    $location.path('/topic');
                 }
             });
         }
