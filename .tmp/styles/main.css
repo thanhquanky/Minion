@@ -20173,6 +20173,34 @@ body {
   background-color: #000000;
 }
 
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/home\/worm\/Documents\/Minion\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003118;
+  }
+}
+
+.current_user_message {
+  color: blue;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/home\/worm\/Documents\/Minion\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003122;
+  }
+}
+
+.another_user_message {
+  color: red;
+}
+
 /**Consistent Button Look and feel of theme**/
 
 @media -sass-debug-info {
@@ -20181,7 +20209,7 @@ body {
   }
 
   line {
-    font-family: \00003119;
+    font-family: \00003127;
   }
 }
 
@@ -20195,7 +20223,7 @@ body {
   }
 
   line {
-    font-family: \00003122;
+    font-family: \00003130;
   }
 }
 
@@ -20210,7 +20238,7 @@ body {
   }
 
   line {
-    font-family: \00003129;
+    font-family: \00003137;
   }
 }
 
@@ -20230,7 +20258,7 @@ body {
   }
 
   line {
-    font-family: \00003134;
+    font-family: \00003142;
   }
 }
 
@@ -20244,7 +20272,7 @@ body {
   }
 
   line {
-    font-family: \00003138;
+    font-family: \00003146;
   }
 }
 
@@ -20258,7 +20286,7 @@ body {
   }
 
   line {
-    font-family: \00003142;
+    font-family: \00003150;
   }
 }
 

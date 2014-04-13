@@ -72,7 +72,7 @@ angular.module('minionApp')
             $scope.registerError = {};
             $firebaseSimpleLogin(ref)
             .$createUser($scope.credentials.email, $scope.credentials.password, true)
-            .then(function(err, user) {
+            .then(function(error, user) {
                 if (err) {
                     $scope.registerError = {
                         code: error.code,

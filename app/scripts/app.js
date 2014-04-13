@@ -18,7 +18,7 @@ angular.module('minionApp', [
           templateUrl: 'views/topic.html',
           controller: 'TopicCtrl'
       })
-      .when('/message', {
+      .when('/message/:roomId', {
           templateUrl: 'views/message.html',
           controller: 'MessageCtrl'
       })

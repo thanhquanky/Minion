@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('minionApp')
-.controller('TopicCtrl', function ($scope, $rootScope, $firebase, User) {
+.controller('TopicCtrl', function ($scope, $rootScope, $firebase, $location, User) {
     $scope.init = function() { 
         $scope.newTopic = {
             "name": "",
@@ -18,16 +18,19 @@ angular.module('minionApp')
 
     $scope.createChatroom = function(e) {
         if (e.keyCode === 13) {
-            $scope.topics.$add($scope.newTopic);
-            $scope.newTopic = {
-                "name": "",
-                "creator": User.email,
-                "id": parseInt(Math.random()*Date.now())
-            };
+            $scope.topics.$add($scope.newTopic).then(function(topic, err) {
+                var savedId = $scope.newTopic.id;
+                $scope.newTopic = {
+                    "name": "",
+                    "creator": User.email,
+                    "id": parseInt(Math.random()*Date.now())
+                };
+                $location.path('/message/' + savedId);
+            });
         }
     };
     
-    $scope.joinChatroom = function(e) {
-        console.log(e);
+    $scope.joinChatroom = function(roomId) {
+        $location.path('/message/' + roomId);
     }
 });

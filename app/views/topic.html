@@ -2,8 +2,8 @@
     <input type="text" ng-model="newTopic.name" typeahead="topic for topic in suggestedTopics | filter:$viewValue | limitTo:8 | orderBy:$viewValue" 
            class="form-control" placeholder="What do want to talk about?" ng-keydown="createChatroom($event)"/>
     
-      <alert ng-repeat="topic in topics" type="alert.primary" close="closeAlert($index)">
-          <div ng-click="joinChatroom(topic.id)">{{topic.name}}</div>
+      <alert ng-repeat="topic in topics" type="alert.primary" close="closeAlert($index)" ng-click="joinChatroom(topic.id)">
+          <div>{{topic.name}}</div>
       </alert>
 
     
